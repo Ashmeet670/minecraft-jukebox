@@ -11,16 +11,13 @@
 }
 
 .picBG {
-    background-image: url(sunset-hill\ copy\ 2.jpg),  linear-gradient(0deg, rgba(0,75,179,1) 60%, rgba(0,0,180,0) 77%);
-    background-blend-mode: overlay;
+    background-image: url(sunset-hill\ copy\ 2.jpg);
+    background-size: contain;
     aspect-ratio: 16/9;
     background-repeat: no-repeat;
-    height: ;
 
 }
-.shadingOut{
 
-}
 .textMain {
     font-size: 75px;
     font-family: 'minecrafter', 'sans-serif';
