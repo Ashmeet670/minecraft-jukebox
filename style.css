@@ -10,13 +10,6 @@
     margin: 0;
 }
 
-.picBG {
-    background-image: url(sunset-hill\ copy\ 2.jpg);
-    background-size: contain;
-    aspect-ratio: 16/9;
-    background-repeat: no-repeat;
-
-}
 
 .textMain {
     font-size: 75px;
