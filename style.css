@@ -17,7 +17,15 @@
     margin: 0;
     font-family: 'minecraftNormal', 'sans-serif';
     vertical-align: middle;
+}
 
+svg{
+    transition: 0.2s;
+}
+svg:hover{
+    scale: 1.2;
+    color: #5dd10fed;
+    cursor: pointer;
 }
 
 
