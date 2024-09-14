@@ -6,3 +6,8 @@ function togglePlayPause() {
     document.getElementById("pause").classList.toggle("d-none")
     
 }
+
+
+function play(){
+    document.getElementById("creator").play()
+}

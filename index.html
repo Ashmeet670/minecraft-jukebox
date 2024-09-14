@@ -29,7 +29,7 @@
         <div class="container ">
             <div class="row py-4 ">
                 <div class="col-12 d-flex justify-content-center ">
-                    <text class="align-middle textMain ">Minecraft Jukebox</text>
+                    <text class="textMain ">Minecraft Jukebox</text>
                 </div>
             </div>
         </div>
@@ -116,7 +116,7 @@
 
         <div class="container">
 
-            <div class="col-3 musicCard">
+            <div class="col-3 musicCard rounded-3 pb-2">
 
                 <div class="d-flex justify-content-between">
                     <div style="display: inline-block;" class="d-flex flex-column align-items-center my-auto ms-3 ">
@@ -127,18 +127,17 @@
                     </div>
 
 
-                    <div style="display: inline-block;" class="d-flex align-items-center mx-2">
 
-                        <img class="musicCardImg ms-auto" src="images/disc_creator.png" alt="">
+                    <img class="musicCardImg justify-self-end mx-2 " src="images/disc_creator.png" alt="">
 
-                    </div>
 
                 </div>
 
 
 
-                <div>
-                    <text class="align-middle fs-4">Play</text>
+                <div class="text-center py-2">
+                    <div style="display: inline-block;" class="fs-4 px-3  rounded-2 musciCardPlay" onclick="play()">Play</div>
+                    <audio id="creator" src="creator.mp3"></audio>
                 </div>
 
             </div>
