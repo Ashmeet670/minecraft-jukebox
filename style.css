@@ -19,10 +19,11 @@
     vertical-align: middle;
 }
 
-svg{
+svg {
     transition: 0.2s;
 }
-svg:hover{
+
+svg:hover {
     scale: 1.2;
     color: #5dd10fed;
     cursor: pointer;
@@ -67,6 +68,22 @@ svg:hover{
     color: white;
 }
 
-.musicCard{
+.musicCard {
     background-color: red;
+}
+
+.musicCardImg {
+    box-sizing: border-box;
+    vertical-align: middle;
+    aspect-ratio: 1/1;
+    width: 60%;
+}
+
+.musicCard-name{
+    font-size: 35px;
+}
+
+.musicCard-by{
+    font-size: 15px;
+    
 }
