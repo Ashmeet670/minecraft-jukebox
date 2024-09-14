@@ -5,13 +5,45 @@
     /* Locate the .ttf file within your directory*/
 }
 
+@font-face {
+    font-family: 'minecraftNormal';
+    /* Name your font family */
+    src: url('MinecraftRegular-Bmg3.otf');
+    /* Locate the .ttf file within your directory*/
+}
+
 * {
     padding: 0;
     margin: 0;
+    font-family: 'minecraftNormal', 'sans-serif';
+    vertical-align: middle;
+
 }
 
 
 .textMain {
     font-size: 75px;
     font-family: 'minecrafter', 'sans-serif';
+}
+
+.progress{
+    position: relative;
+    top: 0;
+    height: 5px;
+    color: white;
+    background-color: #006d02;
+}
+
+.progress-bar{
+
+    background-color: #5dd10fed;
+}
+
+
+.nowPlaying{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #006d02;
+    color: white;
 }
