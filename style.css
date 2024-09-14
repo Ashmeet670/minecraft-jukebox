@@ -26,7 +26,7 @@
     font-family: 'minecrafter', 'sans-serif';
 }
 
-.progress{
+.progress {
     position: relative;
     top: 0;
     height: 5px;
@@ -34,14 +34,24 @@
     background-color: #006d02;
 }
 
-.progress-bar{
+.progress-bar {
 
     background-color: #5dd10fed;
-;
+    ;
 }
 
+.music-name {
+    display: block;
+    font-size: 25px;
+}
 
-.nowPlaying{
+.music-by {
+    display: block;
+    font-size: 13px;
+
+}
+
+.nowPlaying {
     position: fixed;
     bottom: 0;
     width: 100%;
