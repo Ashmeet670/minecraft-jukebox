@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'minecrafter';
     /* Name your font family */
-    src: url('Minecrafter.Reg.ttf');
+    src: url('fonts/Minecrafter.Reg.ttf');
     /* Locate the .ttf file within your directory*/
 }
 
 @font-face {
     font-family: 'minecraftNormal';
     /* Name your font family */
-    src: url('MinecraftRegular-Bmg3.otf');
+    src: url('fonts/MinecraftRegular-Bmg3.otf');
     /* Locate the .ttf file within your directory*/
 }
 
@@ -90,6 +90,7 @@ svg:hover {
     background-color: #151515e5;
     color: #3b9500ed;
     animation: fade-in 1s ease 0s 1 forwards;
+    z-index: 1;
 
 }
 
