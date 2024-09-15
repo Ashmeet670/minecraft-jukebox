@@ -21,6 +21,8 @@ body {
     margin: 0;
     font-family: 'minecraftNormal', 'sans-serif';
     vertical-align: middle;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 svg {
@@ -106,4 +108,9 @@ svg:hover {
 .musciCardPlay:hover {
     cursor: pointer;
     scale: 1.05;
+}
+
+.playing{
+    background-color: #008d3f00;
+    opacity: 70%;
 }
