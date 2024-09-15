@@ -25,6 +25,19 @@ body {
     -webkit-user-select: none;
 }
 
+body::-webkit-scrollbar {
+    /* Safari and Chrome */
+    width: 4px;
+    /* Remove scrollbar space */
+    background: rgb(129, 54, 0)
+        /* Optional: just make scrollbar invisible */
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 300px;
+    background: #199400;
+}
+
 svg {
     transition: 0.2s;
 }
@@ -54,7 +67,7 @@ svg:hover {
     height: 5px;
     color: white;
     background-color: #151515e5;
-    
+
 }
 
 .progress-bar {
@@ -78,6 +91,20 @@ svg:hover {
     width: 100%;
     background-color: #151515e5;
     color: #3b9500ed;
+    animation: fade-in 1s ease 0s 1 forwards;
+
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .musicCard {
@@ -111,12 +138,13 @@ svg:hover {
     scale: 1.05;
 }
 
-.playing{
+.playing {
     background-color: #008d3f00;
     opacity: 70%;
 }
 
-.playingParent{
+
+.playingParent {
     opacity: 70%;
     scale: 0.95;
 }
