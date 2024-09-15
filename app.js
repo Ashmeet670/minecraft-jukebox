@@ -50,7 +50,6 @@ discsBy = {
 
 playing = "5"
 isPlaying = false
-barInterval = ""
 
 function barLenght() {
     bar.style.width = `${((discs[playing].currentTime)/(discs[playing].duration))*100}%`
@@ -71,14 +70,19 @@ function play(song){
     playing = song
     isPlaying = true
 
-    window.requestAnimationFrame(barLenght);
+   window.requestAnimationFrame(barLenght);
 
 }
 
 
-
-function togglePlayPause() {
+function playBar(){
     document.getElementById("play").classList.toggle("d-none")
     document.getElementById("pause").classList.toggle("d-none")
-    
+    discs[playing].play()
+}
+
+function pauseBar(){
+    document.getElementById("play").classList.toggle("d-none")
+    document.getElementById("pause").classList.toggle("d-none")
+    discs[playing].pause()
 }
