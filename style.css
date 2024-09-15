@@ -28,9 +28,7 @@ body {
 body::-webkit-scrollbar {
     /* Safari and Chrome */
     width: 4px;
-    /* Remove scrollbar space */
     background: rgb(129, 54, 0)
-        /* Optional: just make scrollbar invisible */
 }
 
 body::-webkit-scrollbar-thumb {
