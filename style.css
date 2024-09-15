@@ -89,7 +89,7 @@ svg:hover {
 }
 
 .musicCard-name {
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .musicCard-by {
@@ -99,6 +99,8 @@ svg:hover {
 .musciCardPlay {
     background-color: #008d3fed;
     transition: 0.2s;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .musciCardPlay:hover {

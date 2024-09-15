@@ -116,32 +116,160 @@
 
         <div class="container">
 
-            <div class="col-2 musicCard rounded-3 pb-2">
+            <div class="row justify-content-evenly ">
 
-                <div class="d-flex flex-column justify-content-center">
+                <!-- creator -->
+                <div class="col-2 musicCard rounded-3 pb-2">
 
-                    <img class="musicCardImg mx-auto " src="images/disc_creator.png " alt="">
+                    <div class="d-flex flex-column justify-content-center">
+
+                        <img class="musicCardImg mx-auto " src="images/disc_creator.png " alt="">
 
 
 
-                    <div class="d-flex flex-column justify-content-center align-items-center mb-2">
+                        <div class="d-flex flex-column justify-content-center align-items-center mb-2">
 
-                        <text class="musicCard-name">Creator</text>
-                        <text class="musicCard-by">Lenie Raine</text>
+                            <text class="musicCard-name">Creator</text>
+                            <text class="musicCard-by">Lena Raine</text>
 
+                        </div>
+
+                        <div class="text-center justify-content-center  d-flex my-2">
+                            <p style="width: fit-content" class="fs-4 px-3 mx-0 my-auto rounded-2 musciCardPlay  text-center"
+                                onclick="play('creator')">Play</p>
+
+                        </div>
                     </div>
 
-                    <div class="text-center justify-content-center d-flex my-2">
-                        <p style="width: fit-content" class="fs-4 px-3 m-0 rounded-2 musciCardPlay  text-center"
-                            onclick="">Play</p>
-
-                    </div>
                 </div>
 
-            </div>
+                <!-- creator_music_box -->
+                <div class="col-2 musicCard rounded-3 pb-2">
 
+                    <div class="d-flex flex-column justify-content-center">
+
+                        <img class="musicCardImg mx-auto " src="images/disc_creator(musicBox).png " alt="">
+
+
+
+                        <div class="d-flex flex-column justify-content-center align-items-center mb-2">
+
+                            <text class="musicCard-name text-center">Creator</text>
+                            <text class="musicCard-by text-center">(Music Box)</text>
+                            <text class="musicCard-by">Lena Raine</text>
+
+                        </div>
+
+                        <div class="text-center justify-content-center d-flex my-2">
+                            <p style="width: fit-content" class="fs-4 px-3 m-0 rounded-2 musciCardPlay  text-center"
+                                onclick="play('creator_music_box')">Play</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- precipice -->
+                <div class="col-2 musicCard rounded-3 pb-2">
+
+                    <div class="d-flex flex-column justify-content-center">
+
+                        <img class="musicCardImg mx-auto " src="images/disc_precipice.png " alt="">
+
+
+
+                        <div class="d-flex flex-column justify-content-center align-items-center mb-2">
+
+                            <text class="musicCard-name text-center">Precipice</text>
+                            <text class="musicCard-by">Aaron Cherof</text>
+
+                        </div>
+
+                        <div class="text-center justify-content-center d-flex my-2">
+                            <p style="width: fit-content" class="fs-4 px-3 m-0 rounded-2 musciCardPlay  text-center"
+                                onclick="play('precipice')">Play</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- relic -->
+                <div class="col-2 musicCard rounded-3 pb-2">
+
+                    <div class="d-flex flex-column justify-content-center">
+
+                        <img class="musicCardImg mx-auto " src="images/disc_relic.png " alt="">
+
+
+
+                        <div class="d-flex flex-column justify-content-center align-items-center mb-2">
+
+                            <text class="musicCard-name text-center">Relic</text>
+                            <text class="musicCard-by">Aaron Cherof</text>
+
+                        </div>
+
+                        <div class="text-center justify-content-center d-flex my-2">
+                            <p style="width: fit-content" class="fs-4 px-3 m-0 rounded-2 musciCardPlay  text-center"
+                                onclick="play('relic')">Play</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 5 -->
+                <div class="col-2 musicCard rounded-3 pb-2">
+
+                    <div class="d-flex flex-column justify-content-center">
+
+                        <img class="musicCardImg mx-auto " src="images/disc_5.png " alt="">
+
+
+
+                        <div class="d-flex flex-column justify-content-center align-items-center mb-2">
+
+                            <text class="musicCard-name text-center">5</text>
+                            <text class="musicCard-by">Samuel Åberg</text>
+
+                        </div>
+
+                        <div class="text-center justify-content-center d-flex my-2">
+                            <p style="width: fit-content" class="fs-4 px-3 m-0 rounded-2 musciCardPlay  text-center"
+                                onclick="play('5')">Play</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
         </div>
 
+
+        <audio id="5" src="music/5.mp3"></audio>
+        <audio id="11" src="music/11.mp3"></audio>
+        <audio id="13" src="music/13.mp3"></audio>
+        <audio id="blocks" src="music/blocks.mp3"></audio>
+        <audio id="cat" src="music/cat.mp3"></audio>
+        <audio id="chirp" src="music/chirp.mp3"></audio>
+        <audio id="creator_music_box" src="music/creator_music_box.mp3"></audio>
+        <audio id="creator" src="music/creator.mp3"></audio>
+        <audio id="mall" src="music/mall.mp3"></audio>
+        <audio id="mellohi" src="music/mellohi.mp3"></audio>
+        <audio id="otherside" src="music/otherside.mp3"></audio>
+        <audio id="pigstep" src="music/pigstep.mp3"></audio>
+        <audio id="precipice" src="music/precipice.mp3"></audio>
+        <audio id="record" src="music/record.mp3"></audio>
+        <audio id="relic" src="music/relic.mp3"></audio>
+        <audio id="stall" src="music/stall.mp3"></audio>
+        <audio id="strad" src="music/strad.mp3"></audio>
+        <audio id="wait" src="music/wait.mp3"></audio>
+        <audio id="ward" src="music/ward.mp3"></audio>
 
 
 
