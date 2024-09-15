@@ -5,7 +5,7 @@ nowPlayingDiscName = document.getElementById("nowPlayingDiscName")
 nowPlayingByName = document.getElementById("nowPlayingByName")
 
 discs = {
-        "Creator": document.getElementById("creator"),
+    "Creator": document.getElementById("creator"),
     "Creator (Music Box)": document.getElementById("creator_music_box"),
     "Precipice": document.getElementById("precipice"),
     "Relic": document.getElementById("relic"),
@@ -59,7 +59,7 @@ playTextIsPlaying = document.getElementById("5Play")
 function barLenght() {
     bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
 
-    if((((discs[playing].currentTime) / (discs[playing].duration)) * 100) == 100){
+    if ((((discs[playing].currentTime) / (discs[playing].duration)) * 100) == 100) {
         nextTrackBar()
     }
 
@@ -68,11 +68,18 @@ function barLenght() {
 
 function play(song) {
 
+    if (!isPlaying) {
+        document.getElementById("play").classList.toggle("d-none")
+        document.getElementById("pause").classList.toggle("d-none")
+    }
+
     discs[playing].pause()
     discs[playing].currentTime = 0
 
     playTextIsPlaying.innerHTML = "Play"
     playTextIsPlaying.classList.remove("playing")
+    playTextIsPlaying.parentElement.parentElement.parentElement.classList.remove("playingParent")
+
 
     document.getElementById("nowPlaying").classList.remove("d-none")
 
@@ -81,9 +88,13 @@ function play(song) {
     document.getElementById(song + "Play").innerHTML = "Playing..."
     playTextIsPlaying.classList.add("playing")
 
+    playTextIsPlaying.parentElement.parentElement.parentElement.classList.add("playingParent")
+
 
     bar.style.width = "0%"
     discs[song].play()
+
+
     nowPlayingDiscName.innerText = song
     nowPlayingByName.innerText = discsBy[song]
 
@@ -98,12 +109,14 @@ function playBar() {
     document.getElementById("play").classList.toggle("d-none")
     document.getElementById("pause").classList.toggle("d-none")
     discs[playing].play()
+    isPlaying = true
 }
 
 function pauseBar() {
     document.getElementById("play").classList.toggle("d-none")
     document.getElementById("pause").classList.toggle("d-none")
     discs[playing].pause()
+    isPlaying = false
 }
 
 function nextTrackBar() {

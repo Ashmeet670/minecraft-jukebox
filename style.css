@@ -115,3 +115,8 @@ svg:hover {
     background-color: #008d3f00;
     opacity: 70%;
 }
+
+.playingParent{
+    opacity: 70%;
+    scale: 0.95;
+}
