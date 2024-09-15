@@ -59,6 +59,9 @@ playTextIsPlaying = document.getElementById("5Play")
 function barLenght() {
     bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
 
+    if((((discs[playing].currentTime) / (discs[playing].duration)) * 100) == 100){
+        nextTrackBar()
+    }
 
     window.requestAnimationFrame(barLenght);
 };
@@ -70,6 +73,9 @@ function play(song) {
 
     playTextIsPlaying.innerHTML = "Play"
     playTextIsPlaying.classList.remove("playing")
+
+    document.getElementById("nowPlaying").classList.remove("d-none")
+
 
     playTextIsPlaying = document.getElementById(song + "Play")
     document.getElementById(song + "Play").innerHTML = "Playing..."
