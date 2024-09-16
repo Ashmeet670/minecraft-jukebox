@@ -64,14 +64,6 @@ function barLenght() {
         if (!looping) {
             nextTrackBar()
         }
-        else {
-
-            discs[playing].pause()
-            discs[playing].currentTime = 0
-            bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
-            discs[playing].play()
-
-        }
     }
 
     window.requestAnimationFrame(barLenght);
@@ -82,6 +74,10 @@ function play(song) {
     if (!isPlaying) {
         document.getElementById("play").classList.toggle("d-none")
         document.getElementById("pause").classList.toggle("d-none")
+    }
+
+    if(looping){
+        discs[playing].loop = false
     }
 
     discs[playing].pause()
@@ -114,6 +110,10 @@ function play(song) {
     playing = song
     isPlaying = true
 
+    if(looping){
+        discs[playing].loop = true
+    }
+
     window.requestAnimationFrame(barLenght);
 
 }
@@ -133,19 +133,38 @@ function pauseBar() {
 }
 
 function nextTrackBar() {
+
+    if(looping){
+        discs[playing].loop = false
+    }
+
     toPlay = autoPlayOrder[(autoPlayOrder.indexOf(playing)) + 1]
     if ((autoPlayOrder.indexOf(playing)) == 18) {
         toPlay = "Creator"
     }
     play(toPlay)
+
+    if(looping){
+        discs[playing].loop = true
+    }
 }
 
 function previousTrackBar() {
+
+    if(looping){
+        discs[playing].loop = false
+    }
+
+
     toPlay = autoPlayOrder[(autoPlayOrder.indexOf(playing)) - 1]
     if ((autoPlayOrder.indexOf(playing)) == 0) {
         toPlay = "13"
     }
     play(toPlay)
+
+    if(looping){
+        discs[playing].loop = true
+    }
 }
 
 function forward10() {
@@ -177,13 +196,13 @@ function loopSong() {
     if (looping) {
         document.getElementById("loopingOn").classList.add("d-none")
         document.getElementById("loopingOff").classList.remove("d-none")
-
+        discs[playing].loop = false
         looping = false
     }
     else {
         document.getElementById("loopingOn").classList.remove("d-none")
         document.getElementById("loopingOff").classList.add("d-none")
-
+        discs[playing].loop = true
         looping = true
     }
 }
