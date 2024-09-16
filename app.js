@@ -52,6 +52,7 @@ autoPlayOrder = ["Creator", "Creator (Music Box)", "Precipice", "Relic", "5", "O
 
 playing = "5"
 isPlaying = false
+looping = false
 
 
 playTextIsPlaying = document.getElementById("5Play")
@@ -60,7 +61,17 @@ function barLenght() {
     bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
 
     if ((((discs[playing].currentTime) / (discs[playing].duration)) * 100) == 100) {
-        nextTrackBar()
+        if (!looping) {
+            nextTrackBar()
+        }
+        else {
+
+            discs[playing].pause()
+            discs[playing].currentTime = 0
+            bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+            discs[playing].play()
+
+        }
     }
 
     window.requestAnimationFrame(barLenght);
@@ -137,16 +148,42 @@ function previousTrackBar() {
     play(toPlay)
 }
 
-function forward10(){
-    discs[playing].pause()
-    discs[playing].currentTime += 10
-    discs[playing].play()
-    bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+function forward10() {
+    if (((discs[playing].currentTime) / (discs[playing].duration)) * 100 >= 90) {
+        nextTrackBar()
+    }
+    else {
+        discs[playing].pause()
+        discs[playing].currentTime += 10
+        discs[playing].play()
+        bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+    }
+
+
 }
 
-function backward10(){
+function backward10() {
     discs[playing].pause()
     discs[playing].currentTime -= 10
     discs[playing].play()
     bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+
+    if (((discs[playing].currentTime) / (discs[playing].duration)) * 100 <= 0) {
+        previousTrackBar()
+    }
+}
+
+function loopSong() {
+    if (looping) {
+        document.getElementById("loopingOn").classList.add("d-none")
+        document.getElementById("loopingOff").classList.remove("d-none")
+
+        looping = false
+    }
+    else {
+        document.getElementById("loopingOn").classList.remove("d-none")
+        document.getElementById("loopingOff").classList.add("d-none")
+
+        looping = true
+    }
 }

@@ -147,3 +147,8 @@ svg:hover {
     opacity: 70%;
     scale: 0.95;
 }
+
+.looping{
+    scale: 1.2 ;
+    color: #00d647ed ;
+}
