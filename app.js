@@ -75,6 +75,8 @@ function play(song) {
 
     discs[playing].pause()
     discs[playing].currentTime = 0
+    bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+
 
     playTextIsPlaying.innerHTML = "Play"
     playTextIsPlaying.classList.remove("playing")
@@ -133,4 +135,18 @@ function previousTrackBar() {
         toPlay = "13"
     }
     play(toPlay)
+}
+
+function forward10(){
+    discs[playing].pause()
+    discs[playing].currentTime += 10
+    discs[playing].play()
+    bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+}
+
+function backward10(){
+    discs[playing].pause()
+    discs[playing].currentTime -= 10
+    discs[playing].play()
+    bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
 }

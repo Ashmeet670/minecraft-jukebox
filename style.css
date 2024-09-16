@@ -42,7 +42,7 @@ svg {
 
 svg:hover {
     scale: 1.2;
-    color: #2f7500ed;
+    color: #48b500ed;
     cursor: pointer;
 }
 
