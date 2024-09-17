@@ -115,6 +115,7 @@ svg:hover {
     vertical-align: middle;
     aspect-ratio: 1/1;
     width: 65%;
+    height: 65%;
 }
 
 .musicCard-name {
@@ -151,4 +152,38 @@ svg:hover {
 .looping{
     scale: 1.2 ;
     color: #00d647ed ;
+}
+
+
+
+
+@media only screen and (max-width:576px) {
+    .musicCardImg {
+        width: 20%;
+    }
+    .musicCard-name{
+        font-size: 25px;
+    }
+    .musicCard-by{
+        font-size: 15px;
+    }
+
+    .textMain {
+        font-size: 55px;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .musicCardImg {
+        width: 20%;
+    }
+    .musicCard-name{
+        font-size: 22px;
+    }
+    .musicCard-by{
+        font-size: 13px;
+    }
+    .textMain {
+        font-size: 50px;
+    }
 }

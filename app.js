@@ -50,12 +50,91 @@ discsBy = {
 
 autoPlayOrder = ["Creator", "Creator (Music Box)", "Precipice", "Relic", "5", "Otherside", "Pigstep", "Cat", "Chirp", "Blocks", "Mall", "Mellohi", "Far", "Stal", "Strad", "Wait", "Ward", "11", "13"]
 
+
 playing = "5"
 isPlaying = false
 looping = false
 
 
-playTextIsPlaying = document.getElementById("5Play")
+
+
+
+function addCards() {
+
+    // horizontal
+    for (cardIndex = 2; cardIndex < autoPlayOrder.length; cardIndex++) {
+        discName = "disc_" + (autoPlayOrder[cardIndex]).toLowerCase()
+        document.getElementById("horizontalCards").insertAdjacentHTML('beforeend',
+            `
+            
+            <!-- "${autoPlayOrder[cardIndex]}" -->
+    
+                    <div class="col-11 musicCard rounded-1 m-2">
+    
+                        <div class="d-flex  " >
+    
+                            <img class="musicCardImg my-auto mx-1" src="images/${discName}.png" alt="">
+    
+                            <div class="d-flex flex-column  mx-1">
+    
+                                <text class="musicCard-name mt-auto">${autoPlayOrder[cardIndex]}</text>
+                                <text class="musicCard-by mb-auto">${(discsBy[autoPlayOrder[cardIndex]]).slice(3)}</text>
+    
+                            </div>
+    
+                            <div class="text-center justify-content-center justify-self-end  d-flex ms-auto my-2 mx-1">
+                                <p name="${(autoPlayOrder[cardIndex])}Play" style="width: fit-content"
+                                    class="fs-4 px-3 mx-0 my-auto rounded-1 musciCardPlay text-center"
+                                    onclick="play('${autoPlayOrder[cardIndex]}')" >Play</p>
+    
+                            </div>
+                        </div>
+    
+                    </div>
+            
+            
+            `)
+    }
+
+    // vertical
+    for (cardIndex = 2; cardIndex < autoPlayOrder.length; cardIndex++) {
+        discName = "disc_" + (autoPlayOrder[cardIndex]).toLowerCase()
+        document.getElementById("verticalCards").insertAdjacentHTML('beforeend',
+            `
+                <!-- ${autoPlayOrder[cardIndex]} -->
+                <div class="col-5 musicCard rounded-1 pb-2 m-2">
+
+                    <div class="d-flex flex-column justify-content-center">
+
+                        <img class="musicCardImg my-auto mx-auto " src="images/${discName}.png " alt="">
+
+
+
+                        <div class="d-flex flex-column justify-content-center align-items-center mb-2">
+
+                            <text class="musicCard-name">${autoPlayOrder[cardIndex]}</text>
+                            <text class="musicCard-by">${discsBy[autoPlayOrder[cardIndex]]}</text>
+
+                        </div>
+
+                        <div class="text-center justify-content-center  d-flex my-2">
+                            <p name="${(autoPlayOrder[cardIndex])}Play" style="width: fit-content"
+                                 class="fs-4 px-3 mx-0 my-auto rounded-1 musciCardPlay text-center"
+                                onclick="play('${autoPlayOrder[cardIndex]}')" >Play</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            `)
+    }
+
+}
+
+addCards()
+
+playTextIsPlaying = document.getElementsByName("5Play")
+
 
 function barLenght() {
     bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
@@ -68,6 +147,7 @@ function barLenght() {
 
     window.requestAnimationFrame(barLenght);
 };
+
 
 function play(song) {
 
@@ -85,19 +165,35 @@ function play(song) {
     bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
 
 
-    playTextIsPlaying.innerHTML = "Play"
-    playTextIsPlaying.classList.remove("playing")
-    playTextIsPlaying.parentElement.parentElement.parentElement.classList.remove("playingParent")
+    playTextIsPlaying.forEach(item => {
+
+        item.innerHTML = "Play"
+        item.classList.remove("playing")
+        item.parentElement.parentElement.parentElement.classList.remove("playingParent")
+
+    });
+
 
 
     document.getElementById("nowPlaying").classList.remove("d-none")
 
 
-    playTextIsPlaying = document.getElementById(song + "Play")
-    document.getElementById(song + "Play").innerHTML = "Playing..."
-    playTextIsPlaying.classList.add("playing")
 
-    playTextIsPlaying.parentElement.parentElement.parentElement.classList.add("playingParent")
+    playTextIsPlaying = document.getElementsByName(song + "Play")
+
+
+    playTextIsPlaying.forEach(item => {
+
+        item.innerHTML = "Playing..."
+        item.classList.add("playing")
+
+        item.parentElement.parentElement.parentElement.classList.add("playingParent")
+
+
+    });
+
+
+
 
 
     bar.style.width = "0%"
@@ -206,3 +302,4 @@ function loopSong() {
         looping = true
     }
 }
+
