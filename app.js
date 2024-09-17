@@ -76,7 +76,7 @@ function play(song) {
         document.getElementById("pause").classList.toggle("d-none")
     }
 
-    if(looping){
+    if (looping) {
         discs[playing].loop = false
     }
 
@@ -110,7 +110,7 @@ function play(song) {
     playing = song
     isPlaying = true
 
-    if(looping){
+    if (looping) {
         discs[playing].loop = true
     }
 
@@ -134,7 +134,7 @@ function pauseBar() {
 
 function nextTrackBar() {
 
-    if(looping){
+    if (looping) {
         discs[playing].loop = false
     }
 
@@ -144,14 +144,14 @@ function nextTrackBar() {
     }
     play(toPlay)
 
-    if(looping){
+    if (looping) {
         discs[playing].loop = true
     }
 }
 
 function previousTrackBar() {
 
-    if(looping){
+    if (looping) {
         discs[playing].loop = false
     }
 
@@ -162,7 +162,7 @@ function previousTrackBar() {
     }
     play(toPlay)
 
-    if(looping){
+    if (looping) {
         discs[playing].loop = true
     }
 }
