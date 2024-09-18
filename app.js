@@ -56,9 +56,6 @@ isPlaying = false
 looping = false
 
 
-
-
-
 function addCards() {
 
     // horizontal
@@ -139,12 +136,6 @@ playTextIsPlaying = document.getElementsByName("5Play")
 function barLenght() {
     bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
 
-    if ((((discs[playing].currentTime) / (discs[playing].duration)) * 100) == 100) {
-        if (!looping) {
-            nextTrackBar()
-        }
-    }
-
     window.requestAnimationFrame(barLenght);
 };
 
@@ -203,8 +194,11 @@ function play(song) {
     nowPlayingDiscName.innerText = song
     nowPlayingByName.innerText = discsBy[song]
 
+
+
     playing = song
     isPlaying = true
+
 
     if (looping) {
         discs[playing].loop = true
