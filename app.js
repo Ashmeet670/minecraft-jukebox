@@ -1,6 +1,3 @@
-bar = document.getElementById("progress-bar")
-bar.style.width = "0%";
-
 
 discs = {
     "Creator": document.getElementById("creator"),
@@ -130,19 +127,31 @@ addCards()
 
 playTextIsPlaying = document.getElementsByName("5Play")
 
+bar = document.getElementsByName("progress-bar")
+bar.forEach(item => {
+    item.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+})
+
+
 
 function barLenght() {
-    bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+
+    bar.forEach(item => {
+        item.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+    })
 
     window.requestAnimationFrame(barLenght);
 };
 
-
 function play(song) {
 
     if (!isPlaying) {
-        document.getElementById("play").classList.toggle("d-none")
-        document.getElementById("pause").classList.toggle("d-none")
+        document.getElementsByName("play").forEach(item => {
+            item.classList.toggle("d-none")
+        })
+        document.getElementsByName("pause").forEach(item => {
+            item.classList.toggle("d-none")
+        })
     }
 
     if (looping) {
@@ -151,7 +160,9 @@ function play(song) {
 
     discs[playing].pause()
     discs[playing].currentTime = 0
-    bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+    bar.forEach(item => {
+        item.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+    })
 
 
     playTextIsPlaying.forEach(item => {
@@ -185,7 +196,9 @@ function play(song) {
 
 
 
-    bar.style.width = "0%"
+    bar.forEach(item => {
+        item.style.width = `0%`
+    })
     discs[song].play()
 
 
@@ -209,15 +222,23 @@ function play(song) {
 }
 
 function playBar() {
-    document.getElementById("play").classList.toggle("d-none")
-    document.getElementById("pause").classList.toggle("d-none")
+    document.getElementsByName("play").forEach(item => {
+        item.classList.toggle("d-none")
+    })
+    document.getElementsByName("pause").forEach(item => {
+        item.classList.toggle("d-none")
+    })
     discs[playing].play()
     isPlaying = true
 }
 
 function pauseBar() {
-    document.getElementById("play").classList.toggle("d-none")
-    document.getElementById("pause").classList.toggle("d-none")
+    document.getElementsByName("play").forEach(item => {
+        item.classList.toggle("d-none")
+    })
+    document.getElementsByName("pause").forEach(item => {
+        item.classList.toggle("d-none")
+    })
     discs[playing].pause()
     isPlaying = false
 }
@@ -265,7 +286,9 @@ function forward10() {
         discs[playing].pause()
         discs[playing].currentTime += 10
         discs[playing].play()
-        bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+        bar.forEach(item => {
+            item.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+        })
     }
 
 
@@ -275,7 +298,9 @@ function backward10() {
     discs[playing].pause()
     discs[playing].currentTime -= 10
     discs[playing].play()
-    bar.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+    bar.forEach(item => {
+        item.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+    })
 
     if (((discs[playing].currentTime) / (discs[playing].duration)) * 100 <= 0) {
         previousTrackBar()
@@ -283,15 +308,28 @@ function backward10() {
 }
 
 function loopSong() {
+    loopingOn = document.getElementsByName("loopingOn")
+    loopingOff = document.getElementsByName("loopingOff")
+
     if (looping) {
-        document.getElementById("loopingOn").classList.add("d-none")
-        document.getElementById("loopingOff").classList.remove("d-none")
+        loopingOn.forEach(item => {
+            item.classList.add("d-none")
+        })
+        loopingOff.forEach(item => {
+            item.classList.remove("d-none")
+        })
+
         discs[playing].loop = false
         looping = false
     }
     else {
-        document.getElementById("loopingOn").classList.remove("d-none")
-        document.getElementById("loopingOff").classList.add("d-none")
+        loopingOn.forEach(item => {
+            item.classList.remove("d-none")
+        })
+
+        loopingOff.forEach(item => {
+            item.classList.add("d-none")
+        })
         discs[playing].loop = true
         looping = true
     }

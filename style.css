@@ -231,3 +231,18 @@ svg:hover {
     }
 }
 
+@media only screen and (max-width:400px) {
+    .musicCardImg {
+        width: 20%;
+    }
+    .musicCard-name{
+        font-size: 20px;
+    }
+    .musicCard-by{
+        font-size: 13px;
+    }
+    .textMain {
+        font-size: 50px;
+    }
+}
+
