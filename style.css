@@ -83,6 +83,17 @@ svg:hover {
 
 }
 
+.music-nameInline {
+    display: block;
+    font-size: 22px;
+}
+
+.music-byInline {
+    display: block;
+    font-size: 15px;
+}
+
+
 .nowPlaying {
     position: fixed;
     bottom: 0;

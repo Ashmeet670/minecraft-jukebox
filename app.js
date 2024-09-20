@@ -1,12 +1,10 @@
 bar = document.getElementById("progress-bar")
 bar.style.width = "0%";
 
-nowPlayingDiscName = document.getElementById("nowPlayingDiscName")
-nowPlayingByName = document.getElementById("nowPlayingByName")
 
 discs = {
     "Creator": document.getElementById("creator"),
-    "Creator (Music Box)": document.getElementById("creator_music_box"),
+    "Creator (MB)": document.getElementById("creator_music_box"),
     "Precipice": document.getElementById("precipice"),
     "Relic": document.getElementById("relic"),
     "5": document.getElementById("5"),
@@ -33,7 +31,7 @@ discsBy = {
     "Blocks": "by C418",
     "Cat": "by C418",
     "Chirp": "by C418",
-    "Creator (Music Box)": "by Lena Raine",
+    "Creator (MB)": "by Lena Raine",
     "Creator": "by Lena Raine",
     "Mall": "by C418",
     "Mellohi": "by C418",
@@ -48,7 +46,7 @@ discsBy = {
     "Ward": "by C418",
 }
 
-autoPlayOrder = ["Creator", "Creator (Music Box)", "Precipice", "Relic", "5", "Otherside", "Pigstep", "Cat", "Chirp", "Blocks", "Mall", "Mellohi", "Far", "Stal", "Strad", "Wait", "Ward", "11", "13"]
+autoPlayOrder = ["Creator", "Creator (MB)", "Precipice", "Relic", "5", "Otherside", "Pigstep", "Cat", "Chirp", "Blocks", "Mall", "Mellohi", "Far", "Stal", "Strad", "Wait", "Ward", "11", "13"]
 
 
 playing = "5"
@@ -110,7 +108,7 @@ function addCards() {
                         <div class="d-flex flex-column justify-content-center align-items-center mb-2">
 
                             <text class="musicCard-name">${autoPlayOrder[cardIndex]}</text>
-                            <text class="musicCard-by">${discsBy[autoPlayOrder[cardIndex]]}</text>
+                            <text class="musicCard-by">${(discsBy[autoPlayOrder[cardIndex]]).slice(3)}</text>
 
                         </div>
 
@@ -191,9 +189,11 @@ function play(song) {
     discs[song].play()
 
 
-    nowPlayingDiscName.innerText = song
-    nowPlayingByName.innerText = discsBy[song]
+    document.getElementById("nowPlayingDiscName").innerText = song
+    document.getElementById("nowPlayingByName").innerText = discsBy[song]
 
+    document.getElementById("nowPlayingDiscNameInline").innerText = song
+    document.getElementById("nowPlayingByNameInline").innerText = (discsBy[song]).slice(3)
 
 
     playing = song
