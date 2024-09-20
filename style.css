@@ -155,6 +155,23 @@ svg:hover {
 }
 
 
+
+@media only screen and (max-width:992px) {
+    .musicCardImg {
+        width: 50%;
+    }
+    .musicCard-name{
+        font-size: 25px;
+    }
+    .musicCard-by{
+        font-size: 13px;
+    }
+    .textMain {
+        font-size: 55px;
+    }
+}
+
+
 @media only screen and (max-width:768px) {
     .musicCardImg {
         width: 50%;
@@ -166,9 +183,10 @@ svg:hover {
         font-size: 13px;
     }
     .textMain {
-        font-size: 60px;
+        font-size: 45px;
     }
 }
+
 
 
 @media only screen and (max-width:576px) {

@@ -99,7 +99,7 @@ function addCards() {
         document.getElementById("verticalCards").insertAdjacentHTML('beforeend',
             `
                 <!-- ${autoPlayOrder[cardIndex]} -->
-                <div class="col-5 col-md-3 col-lg-2 musicCard rounded-1 pb-2 m-2">
+                <div class="col-5 col-md-4 col-lg-3 col-xl-2 musicCard rounded-1 pb-2 m-2">
 
                     <div class="d-flex flex-column justify-content-center">
 
