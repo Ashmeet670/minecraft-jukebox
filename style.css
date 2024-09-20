@@ -120,6 +120,7 @@ svg:hover {
 .musicCard {
     background-color: #00734b;
     color: #000000ed;
+    scroll-margin: 40vh;
 }
 
 .musicCardImg {

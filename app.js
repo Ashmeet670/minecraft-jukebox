@@ -189,11 +189,13 @@ function play(song) {
 
         item.parentElement.parentElement.parentElement.classList.add("playingParent")
 
+        console.log(window.innerWidth)
+        if(window.innerWidth < "576"){
+            item.parentElement.parentElement.parentElement.scrollIntoView()
+
+        }
 
     });
-
-
-
 
 
     bar.forEach(item => {
