@@ -96,7 +96,7 @@ svg:hover {
 
 .nowPlaying {
     position: fixed;
-    bottom: 0;
+    bottom: -1px;
     width: 100%;
     background-color: #151515e5;
     color: #3b9500ed;
