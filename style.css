@@ -102,7 +102,6 @@ svg:hover {
     color: #3b9500ed;
     animation: fade-in 1s ease 0s 1 forwards;
     z-index: 1;
-
 }
 
 @keyframes fade-in {
@@ -161,26 +160,48 @@ svg:hover {
     scale: 0.95;
 }
 
-.looping{
-    scale: 1.2 ;
-    color: #00d647ed ;
+.looping {
+    scale: 1.2;
+    color: #00d647ed;
+}
+
+.queueSeprator{
+    background-color: #00938c;
+    width: 85%;
+    height: 4px;
+}
+
+.queueList{
+
+    
 }
 
 
+
+@media only screen and (min-width:992px) {
+
+    .queueSeprator{
+        width: 80%;
+    }
+}
 
 @media only screen and (max-width:992px) {
     .musicCardImg {
         width: 50%;
     }
-    .musicCard-name{
+
+    .musicCard-name {
         font-size: 25px;
     }
-    .musicCard-by{
+
+    .musicCard-by {
         font-size: 13px;
     }
+
     .textMain {
         font-size: 55px;
     }
+ 
 }
 
 
@@ -188,14 +209,20 @@ svg:hover {
     .musicCardImg {
         width: 50%;
     }
-    .musicCard-name{
+
+    .musicCard-name {
         font-size: 25px;
     }
-    .musicCard-by{
+
+    .musicCard-by {
         font-size: 13px;
     }
+
     .textMain {
         font-size: 45px;
+    }
+    .queueSeprator{
+        width: 90%;
     }
 }
 
@@ -205,28 +232,37 @@ svg:hover {
     .musicCardImg {
         width: 20%;
     }
-    .musicCard-name{
+
+    .musicCard-name {
         font-size: 23px;
     }
-    .musicCard-by{
+
+    .musicCard-by {
         font-size: 15px;
     }
 
     .textMain {
         font-size: 55px;
     }
+
+    .queueSeprator{
+        width: 95%;
+    }
 }
 
 @media only screen and (max-width:400px) {
     .musicCardImg {
         width: 20%;
     }
-    .musicCard-name{
+
+    .musicCard-name {
         font-size: 20px;
     }
-    .musicCard-by{
+
+    .musicCard-by {
         font-size: 13px;
     }
+
     .textMain {
         font-size: 50px;
     }
@@ -236,14 +272,16 @@ svg:hover {
     .musicCardImg {
         width: 20%;
     }
-    .musicCard-name{
+
+    .musicCard-name {
         font-size: 20px;
     }
-    .musicCard-by{
+
+    .musicCard-by {
         font-size: 13px;
     }
+
     .textMain {
         font-size: 50px;
     }
 }
-

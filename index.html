@@ -23,7 +23,7 @@
     </head>
 
 
-    <body class="">
+    <body id="body" class="">
 
         <!-- title -->
         <div class="container ">
@@ -35,7 +35,7 @@
         </div>
 
         <!-- now playing bar -->
-        <div id="nowPlaying" class="nowPlaying shadow-lg d-none ">
+        <div id="nowPlaying" class="nowPlaying shadow-lg ">
 
             <!-- vertica; -->
             <div class="d-none d-sm-block" id="verticalCardBar">
@@ -65,7 +65,7 @@
 
 
 
-                            <div class="mx-2 align-items-center d-flex" onclick="backward10()" >
+                            <div class="mx-2 align-items-center d-flex" onclick="backward10()">
                                 <svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="100%"
                                     fill="currentColor" class="bi bi-skip-forward-fill" viewBox="0 0 512 512">
                                     <path
@@ -78,8 +78,7 @@
                             </div>
 
 
-                            <div class="mx-1 align-items-center d-flex" onclick="previousTrackBar()"
-                                >
+                            <div class="mx-1 align-items-center d-flex" onclick="previousTrackBar()">
                                 <svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="1.8em" height="100%"
                                     fill="currentColor" class="bi bi-skip-backward-fill" viewBox="0 0 16 16">
                                     <path
@@ -111,7 +110,7 @@
                             </div>
 
 
-                            <div class="mx-1 align-items-center d-flex" onclick="nextTrackBar()" >
+                            <div class="mx-1 align-items-center d-flex" onclick="nextTrackBar()">
                                 <svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="1.8em" height="100%"
                                     fill="currentColor" class="bi bi-skip-forward-fill" viewBox="0 0 16 16">
                                     <path
@@ -119,7 +118,7 @@
                                 </svg>
                             </div>
 
-                            <div class="mx-2 align-items-center d-flex" onclick="forward10()" >
+                            <div class="mx-2 align-items-center d-flex" onclick="forward10()">
                                 <svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="100%"
                                     fill="currentColor" class="bi bi-skip-forward-fill" viewBox="0 0 512 512">
                                     <path
@@ -137,7 +136,7 @@
                         <div class="col-4 d-flex justify-content-end align-middle">
 
 
-                            <div class="mx-2" onclick="queueSong()" >
+                            <div class="mx-2" onclick="queueSong()">
                                 <svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="1.8em" height="100%"
                                     fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2" />
@@ -196,7 +195,7 @@
 
 
 
-                            <div class="mx-2" onclick="queueSong()" >
+                            <div class="mx-2" onclick="queueSong()">
                                 <svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="1.6em" height="100%"
                                     fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2" />
@@ -217,7 +216,7 @@
 
 
 
-                            <div class="mx-2 align-items-center d-flex" onclick="backward10()" >
+                            <div class="mx-2 align-items-center d-flex" onclick="backward10()">
                                 <svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="1.3em" height="100%"
                                     fill="currentColor" class="bi bi-skip-forward-fill" viewBox="0 0 512 512">
                                     <path
@@ -230,8 +229,7 @@
                             </div>
 
 
-                            <div class="mx-1 align-items-center d-flex" onclick="previousTrackBar()"
-                                >
+                            <div class="mx-1 align-items-center d-flex" onclick="previousTrackBar()">
                                 <svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="100%"
                                     fill="currentColor" class="bi bi-skip-backward-fill" viewBox="0 0 16 16">
                                     <path
@@ -263,7 +261,7 @@
                             </div>
 
 
-                            <div class="mx-1 align-items-center d-flex" onclick="nextTrackBar()" >
+                            <div class="mx-1 align-items-center d-flex" onclick="nextTrackBar()">
                                 <svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="100%"
                                     fill="currentColor" class="bi bi-skip-forward-fill" viewBox="0 0 16 16">
                                     <path
@@ -271,7 +269,7 @@
                                 </svg>
                             </div>
 
-                            <div class="mx-2 align-items-center d-flex" onclick="forward10()" >
+                            <div class="mx-2 align-items-center d-flex" onclick="forward10()">
                                 <svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="1.3em" height="100%"
                                     fill="currentColor" class="bi bi-skip-forward-fill" viewBox="0 0 512 512">
                                     <path
@@ -338,8 +336,9 @@
         </div>
 
 
+
         <!-- music cards -->
-        <div class="container">
+        <div class="container mb-2">
             <div class="row justify-content-center d-none d-sm-flex" id="verticalCards">
 
                 <!-- creator -->
@@ -450,9 +449,17 @@
             </div>
         </div>
 
-        <div style="height: 7em;">
+        <hr class="queueSeprator mx-auto">
+
+        <!-- queue list -->
+        <div class="container queueList mt-2">
+
+            
+
+            <div style="height: 300px;"></div>
 
         </div>
+
 
 
         <audio onended="nextTrackBar()" id="5" src="music/5.mp3"></audio>
