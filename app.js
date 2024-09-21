@@ -123,6 +123,37 @@ function addCards() {
             `)
     }
 
+    // queue song
+    for (cardIndex = 0; cardIndex < autoPlayOrder.length; cardIndex++) {
+
+
+
+        document.getElementById("queueSongCreator").insertAdjacentHTML('beforeend',
+            `
+               <div class="col-12 col-sm-11 col-md-5 col-lg-4 col-xl-3 musicCard rounded-2 m-2  p-2 ">
+
+                        <div class="d-flex ">
+
+                            <div class=" d-flex justify-self-start justify-content-start align-items-center"
+                                style="width: 100%;">
+                                <text class="musicCard-name mx-1">${autoPlayOrder[cardIndex]}</text>
+                            
+                            </div>
+
+
+                            <div class="text-center justify-self-end justify-content-center"
+                                onclick="queueSongAdd('${autoPlayOrder[cardIndex]}')">
+                                <p style="width: fit-content"
+                                    class="fs-4 px-3 mx-0 my-auto rounded-2 queueAdd text-center">
+                                    +</p>
+
+                            </div>
+                        </div>
+
+                </div>
+            `)
+    }
+
 }
 
 addCards()
@@ -336,25 +367,43 @@ function loopSong() {
     }
 }
 
-function queueSongButton() {
-    console.log("eobufoiewnikn")
+function queueSongShow() {
 
+    if (!queueSongs) {
+        queueSongs = true
+        document.getElementById("addSongsToQueueBar").classList.remove("d-none")
+        document.getElementById("queueAddPopUp").classList.remove("d-none")
+        document.getElementById("body").style.overflow = "hidden"
+        document.getElementById("nowPlaying").classList.add("d-none")
+    }
+    else if (queueSongs) {
+        queueSongs = false
+        document.getElementById("addSongsToQueueBar").classList.add("d-none")
+        document.getElementById("queueAddPopUp").classList.add("d-none")
+        document.getElementById("body").style.overflow = "auto"
+        document.getElementById("nowPlaying").classList.remove("d-none")
+        document.getElementById("queueAddedText").innerHTML = ""
+    }
+
+}
+
+function queueSongAdd(song) {
     document.getElementById("queueList").insertAdjacentHTML('beforeend',
         `
-        <div class="col-11 col-md-8 col-lg-4 col-xxl-3 musicCard rounded-2 m-2  p-2 ">
+        <div class="col-11 col-md-8 col-lg-5 col-xl-4 col-xxl-3 musicCard rounded-2 m-2  p-2 ">
 
                     <div class="d-flex ">
 
                         <div class="text-center justify-self-start justify-content-center   d-flex">
                             <p name="CreatorPlay" style="width: fit-content"
-                                class="fs-4 px-3 mx-0 my-auto rounded-2 queueNumber text-center col-1">1</p>
+                                class="fs-4 px-3 mx-0 my-auto rounded-2 queueNumber text-center col-1">${queueSongsList.length + 1}</p>
 
                         </div>
 
                         <div class="mx-3 d-flex justify-content-start align-items-center" style="width: 100%;">
-                            <text class="musicCard-name mx-1">Creator</text>
+                            <text class="queueCard-name mx-1">${song}</text>
                             <text class="musicCard-by mx-1">&#9679;</text>
-                            <text class="musicCard-by mx-1">Lena Raine</text>
+                            <text class="musicCard-by mx-1">${discsBy[song].slice(3)}</text>
                         </div>
 
                     </div>
@@ -362,6 +411,8 @@ function queueSongButton() {
                 </div>
 
         `
-    )
 
+    )
+    document.getElementById("queueAddedText").innerHTML = `Added ${song}`
+    queueSongsList.push(`${song}`)
 }

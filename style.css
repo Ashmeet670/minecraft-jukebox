@@ -175,23 +175,20 @@ svg:hover {
     color: #3b9500ed;
 }
 
-.queueNumber {
+.queueAdd {
     background-color: #008d3fed;
     transition: 0.2s;
 }
-.queueNumber:hover {
+.queueAdd:hover {
     scale: 1.1;
     cursor: pointer;
 }
 
-.queueNumber:active {
+.queueAdd:active {
     scale: 0.7;
     background-color: #00853ced;
 
 }
-
-
-
 
 .addSongsToQueueBar {
     position: fixed;
@@ -199,19 +196,7 @@ svg:hover {
     width: 100%;
     background-color: #151515d7;
     color: #44a900f9;
-    animation: fade-in-top 1s ease 0s 1 forwards;
-    z-index: 1;
-    font-size: 25px;
-    backdrop-filter: blur(5);
-    -webkit-backdrop-filter: blur(2px)
-}
-
-.queueAddPopUp{
-    position: fixed;
-    top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 90%;
-    height: 85%;
-    background-color: #000000d5;
+    animation: fade-in-top 0.5s ease 0s 1 forwards;
     z-index: 1;
     font-size: 25px;
     backdrop-filter: blur(5);
@@ -231,11 +216,70 @@ svg:hover {
 }
 
 
+.queueAddPopUp{
+    position: fixed;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 90%;
+    height: fit-content;
+    max-height: 95%;
+    overflow-y: auto;
+    background-color: #000000d5;
+    z-index: 1;
+    font-size: 25px;
+    animation: scale-0-1 0.3s linear 0s 1 forwards;
+    backdrop-filter: blur(5);
+    -webkit-backdrop-filter: blur(2px)
+}
+
+@keyframes scale-0-1 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.queueAddPopUp::-webkit-scrollbar {
+    /* Safari and Chrome */
+    width: 4px;
+    background: rgb(129, 54, 0)
+}
+
+.queueAddPopUp::-webkit-scrollbar-thumb {
+    border-radius: 300px;
+    background: #199400;
+}
+
+.queueCard-name{
+    font-size: 20px;
+
+}
+
+.queueAddedText{
+    color: #199400;
+
+
+}
+
+
+
+@media only screen and (min-width:1400px) {
+
+    .queueCard-name{
+        font-size: 17px;
+    
+    }
+   
+}
+
 @media only screen and (min-width:992px) {
 
     .queueSeprator {
         width: 80%;
     }
+   
 }
 
 @media only screen and (max-width:992px) {
@@ -320,6 +364,10 @@ svg:hover {
     .textMain {
         font-size: 50px;
     }
+    .queueAddedText{
+        font-size: 20px;
+    
+    }
 }
 
 @media only screen and (max-width:400px) {
@@ -338,4 +386,9 @@ svg:hover {
     .textMain {
         font-size: 50px;
     }
+    .queueAddedText{
+        font-size: 17px;
+    
+    }
+
 }
