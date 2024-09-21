@@ -51,6 +51,8 @@ isPlaying = false
 looping = false
 queueSongs = false
 
+queueSongsList = []
+
 function addCards() {
 
     // horizontal
@@ -145,83 +147,75 @@ function barLenght() {
 
 function play(song) {
 
-    if (queueSongs) {
-
-    }
-    else if (!queueSongs) {
-
-
-        if (!isPlaying) {
-            document.getElementsByName("play").forEach(item => {
-                item.classList.toggle("d-none")
-            })
-            document.getElementsByName("pause").forEach(item => {
-                item.classList.toggle("d-none")
-            })
-        }
-
-        if (looping) {
-            discs[playing].loop = false
-        }
-
-        discs[playing].pause()
-        discs[playing].currentTime = 0
-        bar.forEach(item => {
-            item.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+    if (!isPlaying) {
+        document.getElementsByName("play").forEach(item => {
+            item.classList.toggle("d-none")
         })
-
-
-        playTextIsPlaying.forEach(item => {
-
-            item.innerHTML = "Play"
-            item.classList.remove("playing")
-            item.parentElement.parentElement.parentElement.classList.remove("playingParent")
-
-        });
-
-        document.getElementById("nowPlaying").classList.remove("d-none")
-
-        playTextIsPlaying = document.getElementsByName(song + "Play")
-
-        playTextIsPlaying.forEach(item => {
-
-            item.innerHTML = "Playing..."
-            item.classList.add("playing")
-
-            item.parentElement.parentElement.parentElement.classList.add("playingParent")
-
-            console.log(window.innerWidth)
-            if (window.innerWidth < "576") {
-                item.parentElement.parentElement.parentElement.scrollIntoView()
-
-            }
-
-        });
-
-
-        bar.forEach(item => {
-            item.style.width = `0%`
+        document.getElementsByName("pause").forEach(item => {
+            item.classList.toggle("d-none")
         })
-        discs[song].play()
+    }
+
+    if (looping) {
+        discs[playing].loop = false
+    }
+
+    discs[playing].pause()
+    discs[playing].currentTime = 0
+    bar.forEach(item => {
+        item.style.width = `${((discs[playing].currentTime) / (discs[playing].duration)) * 100}%`
+    })
 
 
-        document.getElementById("nowPlayingDiscName").innerText = song
-        document.getElementById("nowPlayingByName").innerText = discsBy[song]
+    playTextIsPlaying.forEach(item => {
 
-        document.getElementById("nowPlayingDiscNameInline").innerText = song
-        document.getElementById("nowPlayingByNameInline").innerText = (discsBy[song]).slice(3)
+        item.innerHTML = "Play"
+        item.classList.remove("playing")
+        item.parentElement.parentElement.parentElement.classList.remove("playingParent")
 
+    });
 
-        playing = song
-        isPlaying = true
+    document.getElementById("nowPlaying").classList.remove("d-none")
 
+    playTextIsPlaying = document.getElementsByName(song + "Play")
 
-        if (looping) {
-            discs[playing].loop = true
+    playTextIsPlaying.forEach(item => {
+
+        item.innerHTML = "Playing..."
+        item.classList.add("playing")
+
+        item.parentElement.parentElement.parentElement.classList.add("playingParent")
+
+        if (window.innerWidth < "576") {
+            item.parentElement.parentElement.parentElement.scrollIntoView()
+
         }
 
-        window.requestAnimationFrame(barLenght);
+    });
+
+
+    bar.forEach(item => {
+        item.style.width = `0%`
+    })
+    discs[song].play()
+
+
+    document.getElementById("nowPlayingDiscName").innerText = song
+    document.getElementById("nowPlayingByName").innerText = discsBy[song]
+
+    document.getElementById("nowPlayingDiscNameInline").innerText = song
+    document.getElementById("nowPlayingByNameInline").innerText = (discsBy[song]).slice(3)
+
+
+    playing = song
+    isPlaying = true
+
+
+    if (looping) {
+        discs[playing].loop = true
     }
+
+    window.requestAnimationFrame(barLenght);
 }
 
 function playBar() {
@@ -338,57 +332,7 @@ function loopSong() {
     }
 }
 
-function queueSong() {
-
-    if (!queueSongs) {
-        queueSongs = true
-
-        //set the add to queue indicator to on
-        document.getElementById("addSongsToQueueBar").classList.remove("d-none")
-
-
-        // make the playing card normal
-        playTextIsPlaying.forEach(item => {
-
-            item.innerHTML = "Play"
-            item.classList.remove("playing")
-            item.parentElement.parentElement.parentElement.classList.remove("playingParent")
-
-        });
-
-        //replace play/playing text with "add"
-        playingTexts = document.getElementsByClassName("musciCardPlay")
-        for (i = 0; i < playingTexts.length; i++) {
-            playingTexts[i].innerHTML = "Add"
-        }
-    }
-    else if (queueSongs) {
-        queueSongs = false
-
-        //set the add to queue indicator to on
-        document.getElementById("addSongsToQueueBar").classList.add("d-none")
-
-
-        //replace play/playing text with "Play"
-        playingTexts = document.getElementsByClassName("musciCardPlay")
-        for (i = 0; i < playingTexts.length; i++) {
-            playingTexts[i].innerHTML = "Play"
-        }
-
-        // make the playing card unormal
-        playTextIsPlaying.forEach(item => {
-
-            item.innerHTML = "Playing..."
-            item.classList.add("playing")
-
-            item.parentElement.parentElement.parentElement.classList.add("playingParent")
-
-        });
-
-
-    }
-
-
+function queueSongButton() {
 
 
 }
