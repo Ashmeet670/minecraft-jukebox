@@ -147,6 +147,8 @@ function barLenght() {
 
 function play(song) {
 
+
+
     if (!isPlaying) {
         document.getElementsByName("play").forEach(item => {
             item.classList.toggle("d-none")
@@ -186,6 +188,7 @@ function play(song) {
 
         item.parentElement.parentElement.parentElement.classList.add("playingParent")
 
+        console.log(window.innerWidth)
         if (window.innerWidth < "576") {
             item.parentElement.parentElement.parentElement.scrollIntoView()
 
@@ -216,6 +219,7 @@ function play(song) {
     }
 
     window.requestAnimationFrame(barLenght);
+
 }
 
 function playBar() {
@@ -333,6 +337,31 @@ function loopSong() {
 }
 
 function queueSongButton() {
+    console.log("eobufoiewnikn")
 
+    document.getElementById("queueList").insertAdjacentHTML('beforeend',
+        `
+        <div class="col-11 col-md-8 col-lg-4 col-xxl-3 musicCard rounded-2 m-2  p-2 ">
+
+                    <div class="d-flex ">
+
+                        <div class="text-center justify-self-start justify-content-center   d-flex">
+                            <p name="CreatorPlay" style="width: fit-content"
+                                class="fs-4 px-3 mx-0 my-auto rounded-2 queueNumber text-center col-1">1</p>
+
+                        </div>
+
+                        <div class="mx-3 d-flex justify-content-start align-items-center" style="width: 100%;">
+                            <text class="musicCard-name mx-1">Creator</text>
+                            <text class="musicCard-by mx-1">&#9679;</text>
+                            <text class="musicCard-by mx-1">Lena Raine</text>
+                        </div>
+
+                    </div>
+
+                </div>
+
+        `
+    )
 
 }

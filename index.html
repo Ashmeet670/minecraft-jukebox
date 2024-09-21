@@ -35,7 +35,7 @@
         </div>
 
         <!-- now playing bar -->
-        <div id="nowPlaying" class="nowPlaying shadow-lg ">
+        <div id="nowPlaying" class="nowPlaying d-none shadow-lg ">
 
             <!-- vertica; -->
             <div class="d-none d-sm-block" id="verticalCardBar">
@@ -346,11 +346,75 @@
         </div>
 
 
+        <!-- queue aff list -->
+
+        <div class="queueAddPopUp rounded-4">
+
+
+            <div id="queueSongCreator" class="row d-flex flex-column justify-content-center p-3">
+
+                <!-- back button -->
+                <div>
+                    <div class="justify-content-start">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.4em" fill="#008d3fed"
+                            class="bi bi-arrow-left-square-fill " viewBox="0 0 16 16">
+                            <path
+                                d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1" />
+                        </svg>
+
+                    </div>
+                </div>
+
+
+                <div class="mt-3 row d-flex justify-content-center ">
+
+
+                    <div class="col-11 col-md-5 col-lg-4 col-xxl-3 musicCard rounded-2 m-2 p-2 ">
+
+                        <div class="d-flex ">
+
+                            <div class=" d-flex justify-self-start justify-content-start align-items-center"
+                                style="width: 100%;">
+                                <text class="musicCard-name mx-1">Creator</text>
+                                <text class="musicCard-by mx-1">&#9679;</text>
+                                <text class="musicCard-by mx-1">Lena Raine</text>
+                            </div>
+
+
+                            <div class="text-center justify-self-end justify-content-center"
+                                onclick="queueSongButton()">
+                                <p style="width: fit-content"
+                                    class="fs-4 px-3 mx-0 my-auto rounded-2 queueNumber text-center">
+                                    +</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
         <!-- queue list -->
-        <div id="queueList" class="container queueList mt-2 text-center ">
+        <div class="container queueList mt-2 text-center ">
 
-            <text class="queueTitle my-3">Queue:</text>
+            <div>
+                <text class="queueTitle my-3">Queue:</text>
+            </div>
 
+            <div id="queueList" class="d-flex flex-wrap justify-content-center">
+
+            </div>
 
 
         </div>
@@ -470,8 +534,6 @@
         </div>
 
         <hr class="queueSeprator mx-auto">
-
-
 
 
 

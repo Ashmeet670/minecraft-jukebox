@@ -177,8 +177,21 @@ svg:hover {
 
 .queueNumber {
     background-color: #008d3fed;
+    transition: 0.2s;
+}
+.queueNumber:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.queueNumber:active {
+    scale: 0.7;
+    background-color: #00853ced;
 
 }
+
+
+
 
 .addSongsToQueueBar {
     position: fixed;
@@ -187,6 +200,18 @@ svg:hover {
     background-color: #151515d7;
     color: #44a900f9;
     animation: fade-in-top 1s ease 0s 1 forwards;
+    z-index: 1;
+    font-size: 25px;
+    backdrop-filter: blur(5);
+    -webkit-backdrop-filter: blur(2px)
+}
+
+.queueAddPopUp{
+    position: fixed;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 90%;
+    height: 85%;
+    background-color: #000000d5;
     z-index: 1;
     font-size: 25px;
     backdrop-filter: blur(5);
