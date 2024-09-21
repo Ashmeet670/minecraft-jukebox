@@ -140,8 +140,6 @@ svg:hover {
 .musciCardPlay {
     background-color: #008d3fed;
     transition: 0.2s;
-    user-select: none;
-    -webkit-user-select: none;
 }
 
 .musciCardPlay:hover {
@@ -171,9 +169,15 @@ svg:hover {
     height: 4px;
 }
 
-.queueList{
+.queueTitle{
+    font-size: 45px;
+    font-family: 'minecrafter', 'sans-serif';
+    color: #3b9500ed;
+}
 
-    
+.queueNumber{
+    background-color: #008d3fed;
+
 }
 
 
