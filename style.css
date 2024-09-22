@@ -223,9 +223,10 @@ svg:hover {
 
 .queueAddPopUp{
     position: fixed;
-    top: 50%; left: 50%; transform: translate(-50%, -45%);
+    top: 50%; left: 50%; transform: translate(-50%, -47%);
     width: 90%;
     height: fit-content;
+    min-height: 80%;
     max-height: 85%;
     overflow-y: auto;
     background-color: #000000d5;

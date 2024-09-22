@@ -52,6 +52,7 @@ looping = false
 queueSongs = false
 
 queueSongsList = []
+queueSongsCards = []
 
 function addCards() {
 
@@ -281,12 +282,21 @@ function nextTrackBar() {
         discs[playing].loop = false
     }
 
-    toPlay = autoPlayOrder[(autoPlayOrder.indexOf(playing)) + 1]
-    if ((autoPlayOrder.indexOf(playing)) == 18) {
-        toPlay = "Creator"
+    if(queueSongsList.length>0){
+        toPlay = queueSongsList[0]
+        queueSongsList.shift()
+        queueSongsCards[0].remove()
+        queueSongsCards.shift()
+        play(toPlay)
     }
-    play(toPlay)
-
+    else{
+        toPlay = autoPlayOrder[(autoPlayOrder.indexOf(playing)) + 1]
+        if ((autoPlayOrder.indexOf(playing)) == 18) {
+            toPlay = "Creator"
+        }
+        play(toPlay)
+    }
+    
     if (looping) {
         discs[playing].loop = true
     }
@@ -393,12 +403,12 @@ function queueSongAdd(song) {
 
     document.getElementById("queueList").insertAdjacentHTML('beforeend',
         `
-        <div class="col-11 col-md-8 col-lg-5 col-xl-4 col-xxl-3 musicCard rounded-2 m-2  p-2 ">
+        <div id="queueSong${queueSongsList.length + 1}" class="col-11 col-md-8 col-lg-5 col-xl-4 col-xxl-3 musicCard rounded-2 m-2  p-2 ">
 
                     <div class="d-flex ">
 
                         <div class="text-center justify-self-start justify-content-center   d-flex">
-                            <p name="CreatorPlay" style="width: fit-content"
+                            <p  style="width: fit-content"
                                 class="fs-4 px-3 mx-0 my-auto rounded-2 queueNumber text-center col-1">${queueSongsList.length + 1}</p>
 
                         </div>
@@ -416,6 +426,7 @@ function queueSongAdd(song) {
         `
 
     )
+    queueSongsCards.push(document.getElementById(`queueSong${queueSongsList.length + 1}`))
     document.getElementById("queueAddedText").innerHTML = `Added ${song}`
     queueSongsList.push(`${song}`)
 }
