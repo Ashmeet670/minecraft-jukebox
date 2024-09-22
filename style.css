@@ -179,6 +179,7 @@ svg:hover {
     background-color: #008d3fed;
     transition: 0.2s;
 }
+
 .queueAdd:hover {
     scale: 1.1;
     cursor: pointer;
@@ -190,7 +191,11 @@ svg:hover {
 
 }
 
-.queuePretext{
+.queueNumber {
+    background-color: #008d3fed;
+}
+
+.queuePretext {
     color: #44a900f9;
     font-size: 20px;
 }
@@ -221,9 +226,11 @@ svg:hover {
 }
 
 
-.queueAddPopUp{
+.queueAddPopUp {
     position: fixed;
-    top: 50%; left: 50%; transform: translate(-50%, -47%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -47%);
     width: 90%;
     height: fit-content;
     min-height: 80%;
@@ -259,12 +266,12 @@ svg:hover {
     background: #199400;
 }
 
-.queueCard-name{
+.queueCard-name {
     font-size: 20px;
 
 }
 
-.queueAddedText{
+.queueAddedText {
     color: #199400;
 
 
@@ -274,11 +281,11 @@ svg:hover {
 
 @media only screen and (min-width:1400px) {
 
-    .queueCard-name{
+    .queueCard-name {
         font-size: 17px;
-    
+
     }
-   
+
 }
 
 @media only screen and (min-width:992px) {
@@ -286,7 +293,7 @@ svg:hover {
     .queueSeprator {
         width: 80%;
     }
-   
+
 }
 
 @media only screen and (max-width:992px) {
@@ -371,9 +378,10 @@ svg:hover {
     .textMain {
         font-size: 50px;
     }
-    .queueAddedText{
+
+    .queueAddedText {
         font-size: 20px;
-    
+
     }
 }
 
@@ -393,9 +401,10 @@ svg:hover {
     .textMain {
         font-size: 50px;
     }
-    .queueAddedText{
+
+    .queueAddedText {
         font-size: 17px;
-    
+
     }
 
 }

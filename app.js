@@ -283,10 +283,16 @@ function nextTrackBar() {
     }
 
     if(queueSongsList.length>0){
+        
         toPlay = queueSongsList[0]
         queueSongsList.shift()
         queueSongsCards[0].remove()
         queueSongsCards.shift()
+    
+        for(i in queueSongsList){
+            document.getElementById("queueNumber" +queueSongsCards[i].id.slice(9)).innerHTML = Number(document.getElementById("queueNumber" +queueSongsCards[i].id.slice(9)).innerHTML) - 1
+        }
+
         play(toPlay)
     }
     else{
@@ -408,7 +414,7 @@ function queueSongAdd(song) {
                     <div class="d-flex ">
 
                         <div class="text-center justify-self-start justify-content-center   d-flex">
-                            <p  style="width: fit-content"
+                            <p  id="queueNumber${queueSongsList.length + 1}" style="width: fit-content"
                                 class="fs-4 px-3 mx-0 my-auto rounded-2 queueNumber text-center col-1">${queueSongsList.length + 1}</p>
 
                         </div>
