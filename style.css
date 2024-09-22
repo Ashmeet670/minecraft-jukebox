@@ -190,6 +190,11 @@ svg:hover {
 
 }
 
+.queuePretext{
+    color: #44a900f9;
+    font-size: 20px;
+}
+
 .addSongsToQueueBar {
     position: fixed;
     top: -1px;
@@ -218,17 +223,18 @@ svg:hover {
 
 .queueAddPopUp{
     position: fixed;
-    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    top: 50%; left: 50%; transform: translate(-50%, -45%);
     width: 90%;
     height: fit-content;
-    max-height: 95%;
+    max-height: 85%;
     overflow-y: auto;
     background-color: #000000d5;
     z-index: 1;
     font-size: 25px;
     animation: scale-0-1 0.3s linear 0s 1 forwards;
-    backdrop-filter: blur(5);
-    -webkit-backdrop-filter: blur(2px)
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    outline: 5px solid #000000;
 }
 
 @keyframes scale-0-1 {

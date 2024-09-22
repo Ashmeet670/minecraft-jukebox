@@ -338,8 +338,6 @@
         <!-- Add to queue indicator -->
         <div id="addSongsToQueueBar" class="addSongsToQueueBar d-flex d-none p-2 justify-content-center ">
 
-
-
             <div class="mx-auto my-auto">Add Songs To Queue</div>
 
 
@@ -347,23 +345,29 @@
 
         <!-- queue add list -->
 
-        <div id="queueAddPopUp" class="queueAddPopUp d-none ">
+        <div id="queueAddPopUp" class="queueAddPopUp  ">
 
 
-            <div class="row d-flex  justify-content-center p-3 m-0 pb-sm-5">
+            <div class="row d-flex justify-content-center p-3 m-0 pb-sm-5">
 
                 <!-- back button -->
                 <div style="width: 100%;" class="d-flex">
-                    <div class="d-inline justify-content-start" onclick="queueSongShow()">
 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1.4em" fill="#008d3fed"
-                            class="bi bi-arrow-left-square-fill " viewBox="0 0 16 16">
-                            <path
-                                d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1" />
-                        </svg>
+                    <div class="align-items-center text-center">
+                        <div class="d-inline justify-content-start" onclick="queueSongShow()">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.4em" fill="#008d3fed"
+                                class="bi bi-arrow-left-square-fill " viewBox="0 0 16 16">
+                                <path
+                                    d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1" />
+                            </svg>
+
+
+                        </div>
+
+
 
                     </div>
-
                     <div class="d-inline ms-auto">
                         <text id="queueAddedText" class="queueAddedText"></text>
                     </div>
@@ -502,6 +506,9 @@
             <div>
                 <text class="queueTitle my-3">Queue:</text>
             </div>
+
+            <text id="queuePretext" class="queuePretext my-3 fs-4">No songs in queue yet! <br> Added songs will appear
+                here</text>
 
             <div id="queueList" class="d-flex flex-wrap justify-content-center">
 

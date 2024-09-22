@@ -388,6 +388,9 @@ function queueSongShow() {
 }
 
 function queueSongAdd(song) {
+
+    document.getElementById("queuePretext").classList.add("d-none")
+
     document.getElementById("queueList").insertAdjacentHTML('beforeend',
         `
         <div class="col-11 col-md-8 col-lg-5 col-xl-4 col-xxl-3 musicCard rounded-2 m-2  p-2 ">
