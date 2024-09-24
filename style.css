@@ -178,6 +178,7 @@ svg:hover {
 .queueAdd {
     background-color: #008d3fed;
     transition: 0.2s;
+    /* transition-duration: 2s; */
 }
 
 .queueAdd:hover {
@@ -185,10 +186,28 @@ svg:hover {
     cursor: pointer;
 }
 
-.queueAdd:active {
-    scale: 0.7;
-    background-color: #00853ced;
 
+
+.animateButtonPress {
+    animation: buttonPress 0.3s ease 0s 1 forwards;
+}
+
+@keyframes buttonPress {
+    0% {
+        scale: 1;
+    }
+
+    40% {
+        scale: 0.7;
+    }
+
+    80% {
+        scale: 1.05;
+    }
+
+    100% {
+        scale: 1;
+    }
 }
 
 .queueNumber {

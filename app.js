@@ -143,7 +143,7 @@ function addCards() {
 
 
                             <div class="text-center justify-self-end justify-content-center"
-                                onclick="queueSongAdd('${autoPlayOrder[cardIndex]}')">
+                                onclick="queueSongAdd('${autoPlayOrder[cardIndex]}') ; animateButtonPress(this)">
                                 <p style="width: fit-content"
                                     class="fs-4 px-3 mx-0 my-auto rounded-2 queueAdd text-center">
                                     +</p>
@@ -409,7 +409,7 @@ function queueSongAdd(song) {
 
     document.getElementById("queueList").insertAdjacentHTML('beforeend',
         `
-        <div id="queueSong${queueSongsList.length + 1}" class="col-11 col-md-8 col-lg-5 col-xl-4 col-xxl-3 musicCard rounded-2 m-2  p-2 ">
+        <div id="queueSong${queueSongsList.length + 1}" class="col-11 col-md-8 col-lg-5 col-xl-4 col-xxl-3 musicCard rounded-2 m-2 p-2 ">
 
                     <div class="d-flex ">
 
@@ -435,4 +435,12 @@ function queueSongAdd(song) {
     queueSongsCards.push(document.getElementById(`queueSong${queueSongsList.length + 1}`))
     document.getElementById("queueAddedText").innerHTML = `Added ${song}`
     queueSongsList.push(`${song}`)
+}
+
+
+function animateButtonPress(btn){
+    btn.classList.add("animateButtonPress")
+    setTimeout(()=>{
+        btn.classList.remove("animateButtonPress")
+    },400)
 }
