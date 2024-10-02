@@ -23,6 +23,7 @@ body {
     vertical-align: middle;
     user-select: none;
     -webkit-user-select: none;
+    
 }
 
 body::-webkit-scrollbar {
