@@ -263,6 +263,12 @@ function playBar() {
     })
     discs[playing].play()
     isPlaying = true
+    console.log("e")
+    document.getElementsByName(playing + "Play").forEach(item => {
+
+        item.innerHTML = "Playing..."
+
+    });
 }
 
 function pauseBar() {
@@ -274,6 +280,15 @@ function pauseBar() {
     })
     discs[playing].pause()
     isPlaying = false
+
+ 
+    console.log("eeeee")
+
+    document.getElementsByName(playing + "Play").forEach(item => {
+
+        item.innerHTML = "- Paused -"
+
+    });
 }
 
 function nextTrackBar() {
