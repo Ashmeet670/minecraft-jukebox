@@ -23,7 +23,7 @@ body {
     vertical-align: middle;
     user-select: none;
     -webkit-user-select: none;
-    
+
 }
 
 body::-webkit-scrollbar {
@@ -141,6 +141,7 @@ svg:hover {
 .musciCardPlay {
     background-color: #008d3fed;
     transition: 0.2s;
+    font-size: 20px;
 }
 
 .musciCardPlay:hover {
@@ -341,13 +342,6 @@ svg:hover {
         width: 50%;
     }
 
-    .musicCard-name {
-        font-size: 25px;
-    }
-
-    .musicCard-by {
-        font-size: 13px;
-    }
 
     .textMain {
         font-size: 45px;
@@ -371,6 +365,10 @@ svg:hover {
 
     .musicCard-by {
         font-size: 15px;
+    }
+
+    .musciCardPlay {
+        font-size: clamp(15px,6vw,21px);
     }
 
     .textMain {
@@ -405,26 +403,3 @@ svg:hover {
     }
 }
 
-@media only screen and (max-width:400px) {
-    .musicCardImg {
-        width: 20%;
-    }
-
-    .musicCard-name {
-        font-size: 20px;
-    }
-
-    .musicCard-by {
-        font-size: 13px;
-    }
-
-    .textMain {
-        font-size: 50px;
-    }
-
-    .queueAddedText {
-        font-size: 17px;
-
-    }
-
-}

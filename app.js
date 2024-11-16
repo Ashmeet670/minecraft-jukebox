@@ -79,7 +79,7 @@ function addCards() {
     
                             <div class="text-center justify-content-center justify-self-end  d-flex ms-auto my-2 mx-1">
                                 <p name="${(autoPlayOrder[cardIndex])}Play" style="width: fit-content"
-                                    class="fs-4 px-3 mx-0 my-auto rounded-1 musciCardPlay text-center"
+                                    class="px-3 mx-0 my-auto rounded-1 musciCardPlay text-center"
                                     onclick="play('${autoPlayOrder[cardIndex]}')" >Play</p>
     
                             </div>
@@ -114,7 +114,7 @@ function addCards() {
 
                         <div class="text-center justify-content-center  d-flex my-2">
                             <p name="${(autoPlayOrder[cardIndex])}Play" style="width: fit-content"
-                                 class="fs-4 px-3 mx-0 my-auto rounded-1 musciCardPlay text-center"
+                                 class="px-3 mx-0 my-auto rounded-1 musciCardPlay text-center"
                                 onclick="play('${autoPlayOrder[cardIndex]}')" >Play</p>
 
                         </div>
