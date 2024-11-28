@@ -406,6 +406,7 @@ function queueSongShow() {
         document.getElementById("queueAddPopUp").classList.remove("d-none")
         document.getElementById("body").style.overflow = "hidden"
         document.getElementById("nowPlaying").classList.add("d-none")
+        document.getElementById("blurBGEle").classList.add("blur")
     }
     else if (queueSongs) {
         queueSongs = false
@@ -414,6 +415,8 @@ function queueSongShow() {
         document.getElementById("body").style.overflow = "auto"
         document.getElementById("nowPlaying").classList.remove("d-none")
         document.getElementById("queueAddedText").innerHTML = ""
+        document.getElementById("blurBGEle").classList.remove("blur")
+
     }
 
 }
