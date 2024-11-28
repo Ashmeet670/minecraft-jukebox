@@ -294,10 +294,12 @@ svg:hover {
 
 .queueAddedText {
     color: #199400;
-
-
 }
 
+.blur{
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
 
 
 @media only screen and (min-width:1400px) {
